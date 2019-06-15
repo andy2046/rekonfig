@@ -716,6 +716,7 @@ var ExampleSecret1 = &corev1.Secret{
 		"key2": "example1:key2",
 		"key3": "example1:key3",
 	},
+	Data: map[string][]byte{},
 }
 
 // ExampleSecret2 is an example Secret object
@@ -730,6 +731,7 @@ var ExampleSecret2 = &corev1.Secret{
 		"key2": "example2:key2",
 		"key3": "example2:key3",
 	},
+	Data: map[string][]byte{},
 }
 
 // ExampleSecret3 is an example Secret object
@@ -744,6 +746,7 @@ var ExampleSecret3 = &corev1.Secret{
 		"key2": "example3:key2",
 		"key3": "example3:key3",
 	},
+	Data: map[string][]byte{},
 }
 
 // ExampleSecret4 is an example Secret object
@@ -758,4 +761,5 @@ var ExampleSecret4 = &corev1.Secret{
 		"key2": "example4:key2",
 		"key3": "example4:key3",
 	},
+	Data: map[string][]byte{},
 }
