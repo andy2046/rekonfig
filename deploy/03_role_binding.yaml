@@ -1,11 +1,12 @@
-kind: RoleBinding
+kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: rekonfig
 subjects:
 - kind: ServiceAccount
   name: rekonfig
+  namespace: default
 roleRef:
-  kind: Role
+  kind: ClusterRole
   name: rekonfig
   apiGroup: rbac.authorization.k8s.io

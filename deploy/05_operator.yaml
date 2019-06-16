@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: rekonfig
+  namespace: default
 spec:
   replicas: 1
   selector:
@@ -15,16 +16,13 @@ spec:
       serviceAccountName: rekonfig
       containers:
         - name: rekonfig
-          # Replace this with the built image name
-          image: REPLACE_IMAGE
+          image: andy2046/rekonfig:latest
           command:
           - rekonfig
           imagePullPolicy: Always
           env:
             - name: WATCH_NAMESPACE
-              valueFrom:
-                fieldRef:
-                  fieldPath: metadata.namespace
+              value: ""
             - name: POD_NAME
               valueFrom:
                 fieldRef:
