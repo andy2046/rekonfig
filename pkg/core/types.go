@@ -59,6 +59,14 @@ type (
 	deployment struct {
 		*appsv1.Deployment
 	}
+
+	statefulset struct {
+		*appsv1.StatefulSet
+	}
+
+	daemonset struct {
+		*appsv1.DaemonSet
+	}
 )
 
 func (d *deployment) GetObject() runtime.Object {
@@ -77,10 +85,6 @@ func (d *deployment) DeepCopy() podController {
 	return &deployment{d.Deployment.DeepCopy()}
 }
 
-type statefulset struct {
-	*appsv1.StatefulSet
-}
-
 func (d *statefulset) GetObject() runtime.Object {
 	return d.StatefulSet
 }
@@ -95,10 +99,6 @@ func (d *statefulset) SetPodTemplate(template *corev1.PodTemplateSpec) {
 
 func (d *statefulset) DeepCopy() podController {
 	return &statefulset{d.StatefulSet.DeepCopy()}
-}
-
-type daemonset struct {
-	*appsv1.DaemonSet
 }
 
 func (d *daemonset) GetObject() runtime.Object {
