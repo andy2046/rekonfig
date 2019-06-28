@@ -1,12 +1,12 @@
 # Rekonfig
 
-Rekonfig monitors `Deployment`s and `ConfigMap`s/`Secret`s mounted, ensures that each `Deployment`'s `Pod`s always have up to date configuration.
+Rekonfig monitors `Deployment` and `ConfigMap`/`Secret` mounted, ensures that each `Deployment`'s `Pod` always have up to date configuration.
 
-Whenever a `ConfigMap` or `Secret` is updated, Rekonfig can trigger a `Rolling Update` of the `Deployment`.
+Whenever a `ConfigMap` or `Secret` is updated, Rekonfig trigger a `Rolling Update` of the `Deployment`.
 
 ## Installation
 
-To deploy Reconfig to a Kubernetes cluster.
+To deploy Rekonfig to a Kubernetes cluster.
 
 ```bash
 $ kubectl apply -f ./deploy
@@ -14,7 +14,7 @@ $ kubectl apply -f ./deploy
 
 ## Configuration
 
-Rekonfig watches all `Deployment`s within a Kubernetes cluster but only processes those with the annotation `rekonfig.gitops.in/update-on-konfig-change: "true"`.
+Rekonfig watches all `Deployment` within a Kubernetes cluster but only processes those with the annotation `rekonfig.gitops.in/update-on-konfig-change: "true"`.
 
 As shown below, once enabled, Rekonfig will set the configuration hash as an annotation `rekonfig.gitops.in/konfig-hash` on the `Deployment`'s `PodTemplate`.
 
